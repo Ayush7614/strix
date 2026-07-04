@@ -66,6 +66,8 @@ Capture legitimate client traffic; map event names (`join`, `subscribe`, `messag
 
 Cross-Site WebSocket Hijacking: victim browser opens WS to target with victim's cookies because server doesn't validate `Origin`.
 
+**SameSite caveat:** With `SameSite=Lax` or `Strict` session cookies, modern browsers usually withhold cookies on cross-site WebSocket handshakes — CSWSH PoCs may fail even when Origin validation is missing. Re-test with `SameSite=None` sessions and legacy clients. SameSite does not replace Origin checks for same-site subdomain attacks or token-in-query auth.
+
 **Test:**
 ```html
 <script>

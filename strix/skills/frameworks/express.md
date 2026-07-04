@@ -109,7 +109,7 @@ Test `<%= 7*7 %>`, `${7*7}`, `{{7*7}}` depending on engine.
 ### CSRF
 
 Express has no built-in CSRF protection.
-- `express-session` + cookie auth on POST/PUT/DELETE without `csurf` or double-submit token
+- `express-session` + cookie auth on POST/PUT/DELETE without a maintained synchronizer-token or double-submit CSRF implementation
 - `SameSite=None` cookies without proper origin checks
 - CORS `credentials: true` with reflected origins
 
