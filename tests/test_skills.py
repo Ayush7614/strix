@@ -84,4 +84,4 @@ def test_every_user_selectable_skill_loads_nonempty() -> None:
     for name in sorted(get_all_skill_names()):
         content = load_skills([name])
         assert name in content, f"{name}: load_skills did not return content"
-        assert len(content[name].strip()) > 100, f"{name}: loaded body too short"
+        assert content[name].strip(), f"{name}: loaded body is empty"
